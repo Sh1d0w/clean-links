@@ -15,6 +15,8 @@ This is a Safari App Extension, which strips all most popular tracking query par
 
 To install *Clean Links* you can either download the latest prebuild extension from the [releases](https://github.com/Sh1d0w/clean-links/releases) tab, or you can clone the repository and build it yourself.
 
+After that double click on the extension to install it. Navigate to `Safari -> Preferences -> Extensions` and make sure *Clean Links* is enabled.
+
 # FAQ
 
 ## What tracking parameters does the plugin currently strips?
@@ -39,6 +41,10 @@ This is the list:
 # Maintainers
 
 - [Radoslav Vitanov](https://github.com/Sh1d0w)
+
+# Resources
+
+- Icon made by [Pixel perfect](https://www.flaticon.com/authors/pixel-perfect) from www.flaticon.com
 
 ## License
 

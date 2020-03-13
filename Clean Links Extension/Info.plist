@@ -59,6 +59,6 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2020 Radoslav Vitanov. All rights reserved.</string>
 	<key>NSHumanReadableDescription</key>
-	<string>This is a Safari Extension. You should tell us what your extension does here.</string>
+	<string>This is a Safari App Extension, which strips all most popular tracking query parameters off the links you click. </string>
 </dict>
 </plist>
