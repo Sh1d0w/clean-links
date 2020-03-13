@@ -12,7 +12,12 @@ var queryParamsToRemove = [
     "gclid",
     "gclsrc",
     "dclid",
-    "zanpid"
+    "zanpid",
+    "mscklid",
+    "mc_eid",
+    "_openstat",
+    "_hsmi",
+    "_hsenc"
 ];
 
 /**

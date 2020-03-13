@@ -25,22 +25,19 @@ You should see the extension icon next to the url bar, indicating that the exten
 
 ### What tracking parameters does the plugin currently strips?
 
-This is the list:
+Tracking tokens from the following services are stripped:
 
-```json
-{
-    "fbclid",
-    "utm_source",
-    "utm_medium",
-    "utm_campaign",
-    "utm_term",
-    "utm_content",
-    "gclid",
-    "gclsrc",
-    "dclid",
-    "zanpid"
-}
-```
+- [UTM parameters](https://en.wikipedia.org/wiki/UTM_parameters) used by Google Analytics
+- [DoubleClick Click Identifier](https://en.wikipedia.org/wiki/DoubleClick_Click_Identifier) (dclid), used by DoubleClick, now Google
+- [Facebook Click Identifier](https://en.wikipedia.org/wiki/Facebook_Click_Identifier) (fbclid) used by Facebook in social media analytics
+- [Google Click Identifier](https://en.wikipedia.org/wiki/Google_Click_Identifier) (gclid and gclsrc), used by Google Ads
+- [Microsoft Click Identifier](https://en.wikipedia.org/wiki/Microsoft_Click_Identifier) (mscklid), used by Bing Ads
+- [Zanox click identifier](https://en.wikipedia.org/wiki/Zanox_click_identifier) (zanpid), used by Awin
+- Mailchimp (mc_eid)
+- Yandex (_openstat)
+- HubSpot (_hsenc, _hsmi)
+
+The extension also prevents event bubling, when clicking on a link, so it avoids services like `Facebook` to track the links you click even when you are on facebook website itself. Links now will be opened directly, instead of re-routed through `l.facebook.com/l.php`.
 
 # Maintainers
 
