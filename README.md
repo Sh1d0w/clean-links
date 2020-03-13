@@ -9,7 +9,7 @@
 	<br>
 </div>
 
-This is a Safari App Extension, which strips all most popular tracking query parameters off the links you click. No more `fbclid` or `gclid`!
+This is a Safari App Extension, which strips all popular tracking query parameters off the links you click. No more `fbclid` or `gclid`!
 
 # Installation
 
