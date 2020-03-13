@@ -42,7 +42,7 @@
 			<key>Identifier</key>
 			<string>Button</string>
 			<key>Image</key>
-			<string>ToolbarItemIcon.pdf</string>
+			<string>fingerprint.png</string>
 			<key>Label</key>
 			<string>Your Button</string>
 		</dict>
@@ -50,10 +50,10 @@
 		<dict>
 			<key>Allowed Domains</key>
 			<array>
-				<string>*.webkit.org</string>
+				<string>*</string>
 			</array>
 			<key>Level</key>
-			<string>Some</string>
+			<string>All</string>
 		</dict>
 	</dict>
 	<key>NSHumanReadableCopyright</key>
