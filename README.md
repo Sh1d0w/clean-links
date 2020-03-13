@@ -17,9 +17,13 @@ To install *Clean Links* you can either download the latest prebuild extension f
 
 After that double click on the extension to install it. Navigate to `Safari -> Preferences -> Extensions` and make sure *Clean Links* is enabled.
 
+You should see the extension icon next to the url bar, indicating that the extension has been successfully activated.
+
+<img src="assets/toolbar.png" />
+
 # FAQ
 
-## What tracking parameters does the plugin currently strips?
+### What tracking parameters does the plugin currently strips?
 
 This is the list:
 
