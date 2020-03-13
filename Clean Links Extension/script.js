@@ -1,3 +1,7 @@
+/**
+ * List of query prameters, used for tracking that will be
+ * stripped out from the links you click.
+ */
 var queryParamsToRemove = [
     "fbclid",
     "utm_source",
@@ -11,7 +15,26 @@ var queryParamsToRemove = [
     "zanpid"
 ];
 
-function catchLinks (root, cb) {
+/**
+ * Cleans the passed url from tracking query params.
+ */
+function cleanUrl(url) {
+    var parsedUrl = new URL(url);
+    
+    for(var param of queryParamsToRemove) {
+        if (parsedUrl.searchParams.has(param)) {
+            parsedUrl.searchParams.delete(param);
+        }
+    }
+
+    return parsedUrl.href;
+}
+
+/**
+ * Observe all links in a given node and
+ * intercept all child links that are clicked.
+ */
+function observeLinks (root, cb) {
     root.addEventListener('click', function (ev) {
         var anchor = null;
         for (var n = ev.target; n.parentNode; n = n.parentNode) {
@@ -30,20 +53,11 @@ function catchLinks (root, cb) {
     });
 };
 
-function cleanUrl(url) {
-    var parsedUrl = new URL(url);
-    
-    for(var param of queryParamsToRemove) {
-        if (parsedUrl.searchParams.has(param)) {
-            parsedUrl.searchParams.delete(param);
-        }
-    }
-
-    return parsedUrl.href;
-}
-
+/**
+ * Register the links observer on dom load event.
+ */
 document.addEventListener("DOMContentLoaded", function(event) {
-    catchLinks(window, function (href, external) {
+    observeLinks(window, function (href, external) {
         window.open(href, external ? '_blank' : '_self','noopener,noreferrer');
     });
 });
