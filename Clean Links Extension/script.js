@@ -11,10 +11,32 @@ function handleKey(e) {
     
     if (e) {
         var holdingModifier = e.ctrlKey || e.metaKey;
-        safari.extension.dispatchMessage("keypress",  { "holdingModifier": holdingModifier });
+        safari.extension.dispatchMessage("keypress",  { "new-tab": holdingModifier });
     }
+};
+
+/**
+ * For the same purpose as above, we need to check if the link that
+ * the user has clicked has target="_blank" and if yes, send signal
+ * to the extension that new tab will be opened.
+ */
+function handleExternalLinks(ev) {
+    var anchor = null;
+    for (var n = ev.target; n.parentNode; n = n.parentNode) {
+        if (n.nodeName === 'A') {
+            anchor = n;
+            break;
+        }
+    }
+    
+    if (anchor && anchor.target === '_blank') {
+        safari.extension.dispatchMessage("keypress",  { "new-tab": true });
+    }
+        
+    return true;
 };
 
 // Bind some event listeners
 document.onkeydown = handleKey;
-document.onkeyup = handleKey
+document.onkeyup = handleKey;
+document.onclick = handleExternalLinks;

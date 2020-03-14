@@ -39,14 +39,14 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
      * during the check, if the modifier key was pressed we just don't redirect on the first call (which is the current
      * page), but we do for the next one which should be the page that was just opened.
      */
-    static var holdingModifier: Bool = false
+    static var willOpenNewTab: Bool = false
     
     /**
      * Handle messages coming from the DOM
      */
     override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String : Any]?) {
         if (messageName == "keypress") {
-            SafariExtensionHandler.holdingModifier = userInfo!["holdingModifier"] as! Bool;
+            SafariExtensionHandler.willOpenNewTab = userInfo!["new-tab"] as! Bool;
         }
     }
     
@@ -97,8 +97,8 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
             // parent page and once for the child. In this case we don't want to
             // redirect the parent page, as you will end up with two tabs with same
             // page opened.
-            if (SafariExtensionHandler.holdingModifier) {
-                SafariExtensionHandler.holdingModifier = false
+            if (SafariExtensionHandler.willOpenNewTab) {
+                SafariExtensionHandler.willOpenNewTab = false
                 return;
             }
                 

@@ -548,7 +548,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Clean Links Extension/Clean_Links_Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4BJWF2898T;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Clean Links Extension/Info.plist";
@@ -572,7 +572,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Clean Links Extension/Clean_Links_Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4BJWF2898T;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Clean Links Extension/Info.plist";
@@ -599,7 +599,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4BJWF2898T;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Clean Links/Info.plist";
@@ -624,7 +624,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4BJWF2898T;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Clean Links/Info.plist";
