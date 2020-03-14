@@ -49,6 +49,12 @@ Tracking tokens from the following services are stripped:
 - [ ] Make the main app screen more user friendly
 - [ ] Make the toolbar icon show counter / stats of links that have been cleaned.
 
+## Support
+
+If this extension was useful to you or you want to support the project, I would be very grateful if you buy me a cup of coffee.
+
+<a href="https://www.buymeacoffee.com/Sh1d0w" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/purple_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+
 # Maintainers
 
 - [Radoslav Vitanov](https://github.com/Sh1d0w)
