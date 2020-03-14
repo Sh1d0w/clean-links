@@ -41,6 +41,8 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
      */
     static var willOpenNewTab: Bool = false
     
+    static var cleanedParameters: [CleanedParameter] = [];
+    
     /**
      * Handle messages coming from the DOM
      */
@@ -55,15 +57,30 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
     }
     
     override func validateToolbarItem(in window: SFSafariWindow, validationHandler: @escaping ((Bool, String) -> Void)) {
-        // This is called when Safari's state changed in some way that would require the extension's toolbar item to be validated again.
-        validationHandler(true, "")
+        let badge = SafariExtensionHandler.cleanedParameters.count > 0 ? String(SafariExtensionHandler.cleanedParameters.count) : ""
+        
+        validationHandler(true, "\(badge)")
     }
     
     override func popoverViewController() -> SFSafariExtensionViewController {
         return SafariExtensionViewController.shared
     }
     
+    override func popoverWillShow(in window: SFSafariWindow) {
+        SafariExtensionViewController.shared.items = SafariExtensionHandler.cleanedParameters
+    }
+    
     override func page(_ page: SFSafariPage, willNavigateTo url: URL?) {
+        // This is a workround when the user opens a link while holding CMD.
+        // If this is the case then this method is called twice, once for the
+        // parent page and once for the child. In this case we don't want to
+        // redirect the parent page, as you will end up with two tabs with same
+        // page opened.
+        if (SafariExtensionHandler.willOpenNewTab) {
+            SafariExtensionHandler.willOpenNewTab = false
+            return;
+        }
+        
         // If we don't have access to that url, just skip
         guard let url = url else {
             return
@@ -78,7 +95,14 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         if let queryItems = components.queryItems {
             // Filter out the blacklisted params
             components.queryItems = queryItems.filter({
-                return !blacklist.contains($0.name)
+                let isBlacklisted = blacklist.contains($0.name);
+                
+                if (isBlacklisted) {
+                    SafariExtensionHandler.cleanedParameters.insert(CleanedParameter(name: $0.name, path: components.host!
+                    ), at: 0)
+                }
+                
+                return !isBlacklisted
             })
             
             // If there are no query parameters remove the query "?" sign
@@ -90,16 +114,6 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
             // in the url, do nothing
             if (components.queryItems?.count == queryItems.count) {
                 return
-            }
-            
-            // This is a workround when the user opens a link while holding CMD.
-            // If this is the case then this method is called twice, once for the
-            // parent page and once for the child. In this case we don't want to
-            // redirect the parent page, as you will end up with two tabs with same
-            // page opened.
-            if (SafariExtensionHandler.willOpenNewTab) {
-                SafariExtensionHandler.willOpenNewTab = false
-                return;
             }
                 
             // Do the actual redirect to the clean url
