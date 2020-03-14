@@ -1,68 +1,20 @@
 /**
- * List of query prameters, used for tracking that will be
- * stripped out from the links you click.
+ * This function catches the press of CMD or CTRL key and notifies the
+ * extension. We need this to workaround opening of links while holding
+ * CMD or CTRL. Because if we detect blacklisted params, we need to clean
+ * up the link and then redirect the current page to the clean link, we
+ * can end up with two tabs with same page opened, as the SafariExtensionHandler
+ * page handler fires twice for both the parent and the child pages.
  */
-var queryParamsToRemove = [
-    "fbclid",
-    "utm_source",
-    "utm_medium",
-    "utm_campaign",
-    "utm_term",
-    "utm_content",
-    "gclid",
-    "gclsrc",
-    "dclid",
-    "zanpid",
-    "mscklid",
-    "mc_eid",
-    "_openstat",
-    "_hsmi",
-    "_hsenc"
-];
-
-/**
- * Cleans the passed url from tracking query params.
- */
-function cleanUrl(url) {
-    var parsedUrl = new URL(url);
+function handleKey(e) {
+    e = e || window.event;
     
-    for(var param of queryParamsToRemove) {
-        if (parsedUrl.searchParams.has(param)) {
-            parsedUrl.searchParams.delete(param);
-        }
+    if (e) {
+        var holdingModifier = e.ctrlKey || e.metaKey;
+        safari.extension.dispatchMessage("keypress",  { "holdingModifier": holdingModifier });
     }
-
-    return parsedUrl.href;
-}
-
-/**
- * Observe all links in a given node and
- * intercept all child links that are clicked.
- */
-function observeLinks (root, cb) {
-    root.addEventListener('click', function (ev) {
-        var anchor = null;
-        for (var n = ev.target; n.parentNode; n = n.parentNode) {
-            if (n.nodeName === 'A') {
-                anchor = n;
-                break;
-            }
-        }
-        if (!anchor) return true;
-        
-        ev.preventDefault();
-
-        var clean = cleanUrl(anchor.href);
-        cb(clean, (ev.metaKey || ev.ctrlKey ));
-        return false;
-    });
 };
 
-/**
- * Register the links observer on dom load event.
- */
-document.addEventListener("DOMContentLoaded", function(event) {
-    observeLinks(window, function (href, external) {
-        window.open(href, external ? '_blank' : '_self','noopener,noreferrer');
-    });
-});
+// Bind some event listeners
+document.onkeydown = handleKey;
+document.onkeyup = handleKey

@@ -11,6 +11,10 @@
 
 This is a Safari App Extension, which strips all popular tracking query parameters off the links you click. No more `fbclid` or `gclid`!
 
+# Requirements
+
+The extension is available in macOS 10.12 and later.
+
 # Installation
 
 To install *Clean Links* you can either download the latest prebuild extension from the [releases](https://github.com/Sh1d0w/clean-links/releases) tab, or you can clone the repository and build it yourself.
@@ -37,7 +41,13 @@ Tracking tokens from the following services are stripped:
 - Yandex (_openstat)
 - HubSpot (_hsenc, _hsmi)
 
-The extension also prevents event bubling, when clicking on a link, so it avoids services like `Facebook` to track the links you click even when you are on facebook website itself. Links now will be opened directly, instead of re-routed through `l.facebook.com/l.php`.
+# Roadmap
+
+- [ ] Regularly add more tracking parameters to the blacklist
+- [ ] Possibly publish the extension to the Mac App Store, in order to provide auto updates.
+- [ ] Escape tracking links as well, such as `l.facebook.com?l.php?u=http://yourlink,com` or email campaign tracking links and redirect to the actual link instead.
+- [ ] Make the main app screen more user friendly
+- [ ] Make the toolbar icon show counter / stats of links that have been cleaned.
 
 # Maintainers
 
