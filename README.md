@@ -45,9 +45,9 @@ Tracking tokens from the following services are stripped:
 
 - [ ] Regularly add more tracking parameters to the blacklist
 - [ ] Possibly publish the extension to the Mac App Store, in order to provide auto updates.
-- [ ] Escape tracking links as well, such as `l.facebook.com?l.php?u=http://yourlink,com` or email campaign tracking links and redirect to the actual link instead.
+- [X] Escape tracking links as well, such as `l.facebook.com?l.php?u=http://yourlink,com` or email campaign tracking links and redirect to the actual link instead.
 - [ ] Make the main app screen more user friendly
-- [ ] Make the toolbar icon show counter / stats of links that have been cleaned.
+- [x] Make the toolbar icon show counter / stats of links that have been cleaned.
 
 ## Support
 

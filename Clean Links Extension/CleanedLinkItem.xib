@@ -8,7 +8,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="CleanedLinkItem" customModule="Clean_Links_Extension" customModuleProvider="target">
             <connections>
-                <outlet property="label" destination="EFE-mq-Ih1" id="kKJ-bT-aqe"/>
+                <outlet property="image" destination="ZDh-QL-aK6" id="tlX-DP-Ujk"/>
+                <outlet property="label" destination="uOL-7w-uw3" id="FzO-fi-cO2"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -25,9 +26,9 @@
                     </constraints>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ShieldCheck" id="yaI-I7-GOp"/>
                 </imageView>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EFE-mq-Ih1">
-                    <rect key="frame" x="36" y="7" width="246" height="16"/>
-                    <textFieldCell key="cell" alignment="left" title="Label" id="SmV-5r-EeC">
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="uOL-7w-uw3">
+                    <rect key="frame" x="33" y="11" width="244" height="16"/>
+                    <textFieldCell key="cell" selectable="YES" alignment="left" title="Multiline Label" id="CCb-DO-I7G">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -35,11 +36,12 @@
                 </textField>
             </subviews>
             <constraints>
-                <constraint firstItem="ZDh-QL-aK6" firstAttribute="centerY" secondItem="EFE-mq-Ih1" secondAttribute="centerY" id="5Ac-Ze-4RM"/>
-                <constraint firstItem="EFE-mq-Ih1" firstAttribute="leading" secondItem="ZDh-QL-aK6" secondAttribute="trailing" constant="8" symbolic="YES" id="6d4-ZS-ien"/>
+                <constraint firstItem="uOL-7w-uw3" firstAttribute="leading" secondItem="ZDh-QL-aK6" secondAttribute="trailing" constant="5" id="8wk-I0-d07"/>
+                <constraint firstAttribute="trailing" secondItem="uOL-7w-uw3" secondAttribute="trailing" constant="5" id="AZZ-SY-evf"/>
                 <constraint firstAttribute="bottom" secondItem="ZDh-QL-aK6" secondAttribute="bottom" id="JeM-kv-Qjm"/>
                 <constraint firstItem="ZDh-QL-aK6" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="UWF-MX-h6E"/>
                 <constraint firstItem="ZDh-QL-aK6" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="jAe-eT-Nd9"/>
+                <constraint firstItem="uOL-7w-uw3" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="5" id="r8f-G8-mic"/>
             </constraints>
             <point key="canvasLocation" x="139" y="154"/>
         </customView>

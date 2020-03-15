@@ -8,7 +8,13 @@
 
 import Foundation
 
-struct CleanedParameter {
-    let name: String
-    let path: String
+enum EventType {
+    case parameter
+    case linkTracker
+}
+
+struct Event {
+    let type: EventType
+    let domain: String
+    let value: String
 }

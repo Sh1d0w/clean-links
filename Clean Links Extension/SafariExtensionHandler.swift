@@ -41,7 +41,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
      */
     static var willOpenNewTab: Bool = false
     
-    static var cleanedParameters: [CleanedParameter] = [];
+    static var events: [Event] = [];
     
     /**
      * Handle messages coming from the DOM
@@ -50,6 +50,15 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         if (messageName == "keypress") {
             SafariExtensionHandler.willOpenNewTab = userInfo!["new-tab"] as! Bool;
         }
+        
+        if (messageName == "prevented-redirect") {
+            let domain = userInfo!["domain"] as! String
+            let url = userInfo!["url"] as! String
+            
+            SafariExtensionHandler.events.insert(
+                Event(type: EventType.linkTracker, domain: domain, value: url),
+            at: 0)
+        }
     }
     
     override func toolbarItemClicked(in window: SFSafariWindow) {
@@ -57,7 +66,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
     }
     
     override func validateToolbarItem(in window: SFSafariWindow, validationHandler: @escaping ((Bool, String) -> Void)) {
-        let badge = SafariExtensionHandler.cleanedParameters.count > 0 ? String(SafariExtensionHandler.cleanedParameters.count) : ""
+        let badge = SafariExtensionHandler.events.count > 0 ? String(SafariExtensionHandler.events.count) : ""
         
         validationHandler(true, "\(badge)")
     }
@@ -67,7 +76,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
     }
     
     override func popoverWillShow(in window: SFSafariWindow) {
-        SafariExtensionViewController.shared.items = SafariExtensionHandler.cleanedParameters
+        SafariExtensionViewController.shared.items = SafariExtensionHandler.events
     }
     
     override func page(_ page: SFSafariPage, willNavigateTo url: URL?) {
@@ -91,6 +100,19 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
             return
         }
         
+        let linkGuard = ExternalLinkGuard(components: components)
+        
+        if let link = linkGuard.cleanUrl() {
+            let parsedLink = URLComponents(string: link)!
+            SafariExtensionHandler.events.insert(Event(type: EventType.linkTracker, domain: components.host!, value: parsedLink.host!
+            ), at: 0)
+            
+            page.getContainingTab(completionHandler: {
+                $0.navigate(to: URL(string: link)!)
+            })
+            return
+        }
+        
         // Parse the query parameters, if there are any
         if let queryItems = components.queryItems {
             // Filter out the blacklisted params
@@ -98,7 +120,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
                 let isBlacklisted = blacklist.contains($0.name);
                 
                 if (isBlacklisted) {
-                    SafariExtensionHandler.cleanedParameters.insert(CleanedParameter(name: $0.name, path: components.host!
+                    SafariExtensionHandler.events.insert(Event(type: EventType.parameter, domain: components.host!, value: $0.name
                     ), at: 0)
                 }
                 

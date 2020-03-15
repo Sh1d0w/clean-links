@@ -12,6 +12,8 @@ class CleanedLinkItem: NSCollectionViewItem {
     
     @IBOutlet weak var label: NSTextField!
     
+    @IBOutlet weak var image: NSImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

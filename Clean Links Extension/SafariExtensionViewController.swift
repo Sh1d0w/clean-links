@@ -10,7 +10,7 @@ import SafariServices
 
 class SafariExtensionViewController: SFSafariExtensionViewController {
     
-    var items: [CleanedParameter] = [] {
+    var items: [Event] = [] {
         didSet {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
@@ -32,7 +32,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
         collectionView.backgroundColors = [.clear]
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(CleanedLinkItem.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: "CleanedLinkItem")
+        collectionView.register(CleanedLinkItem.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: "Event")
         )
         
     }
@@ -63,30 +63,52 @@ extension NSMutableAttributedString {
         self.append(NSAttributedString(string: value, attributes:attributes))
         return self
     }
-
-    func underlined(_ value:String) -> NSMutableAttributedString {
-
-        let attributes:[NSAttributedString.Key : Any] = [
-            .font :  normalFont,
-            .underlineStyle : NSUnderlineStyle.single.rawValue
-
-        ]
-
-        self.append(NSAttributedString(string: value, attributes:attributes))
-        return self
-    }
 }
 
 extension SafariExtensionViewController: NSCollectionViewDelegateFlowLayout, NSCollectionViewDataSource {
+    private func getLabel(item: Event) -> NSMutableAttributedString {
+       switch item.type {
+            case EventType.linkTracker:
+                return NSMutableAttributedString()
+                    .normal("Prevented redirect from ")
+                    .bold("\(item.domain)")
+                    .normal(" to ")
+                    .bold("\(item.value)")
+            default:
+                return NSMutableAttributedString()
+                    .normal("Removed ")
+                    .bold("\(item.value)")
+                    .normal(" from ")
+                    .bold("\(item.domain)")
+        }
+    }
+    
+    private func estimateFrameForText(text: String) -> CGRect {
+        let height: CGFloat = 30
+
+        let size = CGSize(width: collectionView.frame.size.width, height: height)
+        let options = NSString.DrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
+        let attributes = [NSAttributedString.Key.font: NSFont.boldSystemFont(ofSize: 14)]
+
+        return NSString(string: text).boundingRect(with: size, options: options, attributes: attributes, context: nil)
+    }
+    
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
         
-        let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "CleanedLinkItem"), for: indexPath) as! CleanedLinkItem
+        let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "Event"), for: indexPath) as! CleanedLinkItem
     
-        item.label.attributedStringValue = NSMutableAttributedString()
-            .normal("Removed ")
-            .bold("\(items[indexPath.item].name)")
-            .normal(" from ")
-            .bold("\(items[indexPath.item].path)")
+        var image: NSImage? = nil
+        let label: NSMutableAttributedString = getLabel(item: items[indexPath.item])
+        
+        switch items[indexPath.item].type {
+            case EventType.linkTracker:
+                image = NSImage(named: NSImage.Name("Link"))
+            default:
+                image = NSImage(named: NSImage.Name("ShieldCheck"))
+        }
+        
+        item.image.image = image
+        item.label.attributedStringValue = label
         
         return item
     }
@@ -96,10 +118,14 @@ extension SafariExtensionViewController: NSCollectionViewDelegateFlowLayout, NSC
     }
     
     func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> NSSize {
+        //we are just measuring height so we add a padding constant to give the label some room to breathe!
+        let padding: CGFloat = 5
 
-      return NSSize(
-        width: collectionView.frame.size.width,
-        height: 30
-      )
+        //estimate each cell's height
+        let text = getLabel(item: items[indexPath.item])
+        let options = NSString.DrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
+        let height = text.boundingRect(with: collectionView.frame.size, options: options)
+
+        return CGSize(width: collectionView.frame.size.width, height: height.size.height + padding)
     }
 }
