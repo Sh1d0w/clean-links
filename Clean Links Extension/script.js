@@ -48,7 +48,11 @@
      * We will make sure they can't do that anymore.
      */
     function removeGoogleRedirect(url) {
-        return url.searchParams.get("url");
+        if (url.searchParams.has("url")) {
+            return url.searchParams.get("url");
+        }
+ 
+        return url.searchParams.get("q");
     }
  
      /**
@@ -99,7 +103,7 @@
  
         if (isTracker) {
             ev.preventDefault();
- 
+
             safari.extension.dispatchMessage("prevented-redirect",  {
                 "domain": parsedUrl.hostname,
                 "url": cleanUrl

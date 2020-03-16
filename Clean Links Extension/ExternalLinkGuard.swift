@@ -28,7 +28,6 @@ class ExternalLinkGuard {
     }
     
     func isGoogleTrackingUrl() -> Bool {
-        NSLog("\(components.path)")
         if (components.host!.contains("google") && components.path == "/url") {
             return true
         }
@@ -50,7 +49,7 @@ class ExternalLinkGuard {
         }
         
         let urlParam = components.queryItems?.first(where: { (item) -> Bool in
-            item.name == "url"
+            return item.name == "url" || item.name == "q"
         })
         
         if let url = urlParam?.value {
