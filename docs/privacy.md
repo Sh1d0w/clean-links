@@ -28,7 +28,7 @@ When you click on an external link while browsing `facebook.com` (let's say some
 - **Facebook** replaces the original articale link with `l.facebook.com/l.php?u=http://the-real-url.com` just in case you have javascript enabled or you try to copy the link to the article to a friend. This again tracks your click.
 
 
-### Precense tracking
+### Presence tracking
 
 Periodicly **Facebook** pings `https://www.facebook.com/ajax/bz` with a lot of personal data as well, indicating what you are looking to, time spent etc.
 
