@@ -1,0 +1,18 @@
+[
+    {
+        "action": {
+            "type": "block"
+        },
+        "trigger": {
+            "url-filter": "(.*)facebook.com/si(.*)"
+        }
+    },
+    {
+        "action": {
+            "type": "block"
+        },
+        "trigger": {
+            "url-filter": "(.*)facebook.com/ajax/bz(.*)"
+        }
+    }
+]

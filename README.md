@@ -19,7 +19,7 @@ The extension is available in macOS 10.12 and later.
 
 To install *Clean Links* you can either download the latest prebuild extension from the [releases](https://github.com/Sh1d0w/clean-links/releases) tab, or you can clone the repository and build it yourself.
 
-After that double click on the extension to install it. Navigate to `Safari -> Preferences -> Extensions` and make sure *Clean Links* is enabled.
+After that double click on the extension to install it. Navigate to `Safari -> Preferences -> Extensions` and make sure *Clean Links Extension* and *Clean Links Content Blocker* are enabled.
 
 You should see the extension icon next to the url bar, indicating that the extension has been successfully activated.
 
@@ -41,13 +41,12 @@ Tracking tokens from the following services are stripped:
 - Yandex (_openstat)
 - HubSpot (_hsenc, _hsmi)
 
+**Clean Links** also does more than just removing tracking parameters, you can read more about it's privacy features in the [Privacy](./docs/privacy.md) section.
+
 # Roadmap
 
-- [ ] Regularly add more tracking parameters to the blacklist
-- [ ] Possibly publish the extension to the Mac App Store, in order to provide auto updates.
-- [X] Escape tracking links as well, such as `l.facebook.com?l.php?u=http://yourlink,com` or email campaign tracking links and redirect to the actual link instead.
+- [ ] Possibly publish the extension to the Mac App Store, in order to provide auto updates.tracking links and redirect to the actual link instead.
 - [ ] Make the main app screen more user friendly
-- [x] Make the toolbar icon show counter / stats of links that have been cleaned.
 
 ## Support
 

@@ -73,23 +73,34 @@
      */
     function handleExternalLinks(ev) {
         var anchor = null;
+ 
         for (var n = ev.target; n.parentNode; n = n.parentNode) {
             if (n.nodeName === "A") {
                 anchor = n;
                 break;
             }
         }
+ 
+        // Check if the user has actually clicked on a link
+        if (anchor === null) {
+            return;
+        }
         
-        var shouldOpenNewTab = anchor && anchor.target === "_blank";
+        // We will try to determine if we should open the link in the same tab
+        // or in a new one. This happens only if the link itself has target="_blank"
+        // or the user is holding the CMD key.
+        var shouldOpenNewTab = (anchor && anchor.target === "_blank") || (ev.ctrlKey || ev.metaKey);
         
+        // Notify the extension that we want a new tab opened
         if (shouldOpenNewTab) {
             safari.extension.dispatchMessage("keypress",  { "new-tab": true });
         }
         
+        // Parse the url
         var parsedUrl = new URL(anchor.href);
  
         var isTracker = false;
-        var cleanUrl = null;
+        var cleanUrl = parsedUrl;
         
         if (isGoogleTrackingUrl(parsedUrl)) {
             isTracker = true;
@@ -121,4 +132,4 @@
     d.onkeydown = handleKey;
     d.onkeyup = handleKey;
     d.onclick = handleExternalLinks;
-})(window, document)
+})(window, document);

@@ -26,6 +26,10 @@
 		85BD813D241B35F00009A377 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BD813C241B35F00009A377 /* SafariExtensionViewController.swift */; };
 		85BD8140241B35F00009A377 /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85BD813E241B35F00009A377 /* SafariExtensionViewController.xib */; };
 		85BD8143241B35F00009A377 /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = 85BD8142241B35F00009A377 /* script.js */; };
+		85DB596B241F91D200524FE9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85BD8137241B35F00009A377 /* Cocoa.framework */; };
+		85DB596E241F91D200524FE9 /* blockerList.json in Resources */ = {isa = PBXBuildFile; fileRef = 85DB596D241F91D200524FE9 /* blockerList.json */; };
+		85DB5970241F91D200524FE9 /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DB596F241F91D200524FE9 /* ContentBlockerRequestHandler.swift */; };
+		85DB5975241F91D200524FE9 /* Content Blocker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 85DB596A241F91D200524FE9 /* Content Blocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +54,13 @@
 			remoteGlobalIDString = 85BD8131241B35F00009A377;
 			remoteInfo = "Clean Links Extension";
 		};
+		85DB5973241F91D200524FE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85BD8101241B35EE0009A377 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 85DB5969241F91D200524FE9;
+			remoteInfo = "Content Blocker";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,6 +70,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				85DB5975241F91D200524FE9 /* Content Blocker.appex in Embed App Extensions */,
 				85BD8133241B35F00009A377 /* Clean Links Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -93,6 +105,11 @@
 		85BD8141241B35F00009A377 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85BD8142241B35F00009A377 /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
 		85BD8146241B35F00009A377 /* Clean_Links_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Clean_Links_Extension.entitlements; sourceTree = "<group>"; };
+		85DB596A241F91D200524FE9 /* Content Blocker.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Content Blocker.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85DB596D241F91D200524FE9 /* blockerList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = blockerList.json; sourceTree = "<group>"; };
+		85DB596F241F91D200524FE9 /* ContentBlockerRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerRequestHandler.swift; sourceTree = "<group>"; };
+		85DB5971241F91D200524FE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85DB5972241F91D200524FE9 /* Content_Blocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Content_Blocker.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +142,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		85DB5967241F91D200524FE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85DB596B241F91D200524FE9 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -135,6 +160,7 @@
 				85BD811F241B35F00009A377 /* Clean LinksTests */,
 				85BD812A241B35F00009A377 /* Clean LinksUITests */,
 				85BD8139241B35F00009A377 /* Clean Links Extension */,
+				85DB596C241F91D200524FE9 /* Content Blocker */,
 				85BD8136241B35F00009A377 /* Frameworks */,
 				85BD810A241B35EE0009A377 /* Products */,
 			);
@@ -147,6 +173,7 @@
 				85BD811C241B35F00009A377 /* Clean LinksTests.xctest */,
 				85BD8127241B35F00009A377 /* Clean LinksUITests.xctest */,
 				85BD8132241B35F00009A377 /* Clean Links Extension.appex */,
+				85DB596A241F91D200524FE9 /* Content Blocker.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -208,6 +235,17 @@
 			path = "Clean Links Extension";
 			sourceTree = "<group>";
 		};
+		85DB596C241F91D200524FE9 /* Content Blocker */ = {
+			isa = PBXGroup;
+			children = (
+				85DB596D241F91D200524FE9 /* blockerList.json */,
+				85DB596F241F91D200524FE9 /* ContentBlockerRequestHandler.swift */,
+				85DB5971241F91D200524FE9 /* Info.plist */,
+				85DB5972241F91D200524FE9 /* Content_Blocker.entitlements */,
+			);
+			path = "Content Blocker";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -224,6 +262,7 @@
 			);
 			dependencies = (
 				85BD8135241B35F00009A377 /* PBXTargetDependency */,
+				85DB5974241F91D200524FE9 /* PBXTargetDependency */,
 			);
 			name = "Clean Links";
 			productName = "Clean Links";
@@ -283,6 +322,23 @@
 			productReference = 85BD8132241B35F00009A377 /* Clean Links Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		85DB5969241F91D200524FE9 /* Content Blocker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85DB5978241F91D200524FE9 /* Build configuration list for PBXNativeTarget "Content Blocker" */;
+			buildPhases = (
+				85DB5966241F91D200524FE9 /* Sources */,
+				85DB5967241F91D200524FE9 /* Frameworks */,
+				85DB5968241F91D200524FE9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Content Blocker";
+			productName = "Content Blocker";
+			productReference = 85DB596A241F91D200524FE9 /* Content Blocker.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -307,6 +363,9 @@
 					85BD8131241B35F00009A377 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
+					85DB5969241F91D200524FE9 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
 				};
 			};
 			buildConfigurationList = 85BD8104241B35EE0009A377 /* Build configuration list for PBXProject "Clean Links" */;
@@ -326,6 +385,7 @@
 				85BD811B241B35F00009A377 /* Clean LinksTests */,
 				85BD8126241B35F00009A377 /* Clean LinksUITests */,
 				85BD8131241B35F00009A377 /* Clean Links Extension */,
+				85DB5969241F91D200524FE9 /* Content Blocker */,
 			);
 		};
 /* End PBXProject section */
@@ -364,6 +424,14 @@
 				8593F5AD241CAE4E00DF5915 /* fingerprint.png in Resources */,
 				85BD8143241B35F00009A377 /* script.js in Resources */,
 				850AB753241D248D00D3CA35 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85DB5968241F91D200524FE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85DB596E241F91D200524FE9 /* blockerList.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +475,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		85DB5966241F91D200524FE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85DB5970241F91D200524FE9 /* ContentBlockerRequestHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -424,6 +500,11 @@
 			isa = PBXTargetDependency;
 			target = 85BD8131241B35F00009A377 /* Clean Links Extension */;
 			targetProxy = 85BD8134241B35F00009A377 /* PBXContainerItemProxy */;
+		};
+		85DB5974241F91D200524FE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 85DB5969241F91D200524FE9 /* Content Blocker */;
+			targetProxy = 85DB5973241F91D200524FE9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -566,7 +647,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Clean Links Extension/Clean_Links_Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 4BJWF2898T;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Clean Links Extension/Info.plist";
@@ -590,7 +671,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Clean Links Extension/Clean_Links_Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 4BJWF2898T;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Clean Links Extension/Info.plist";
@@ -617,7 +698,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 4BJWF2898T;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Clean Links/Info.plist";
@@ -642,7 +723,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 4BJWF2898T;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Clean Links/Info.plist";
@@ -742,6 +823,50 @@
 			};
 			name = Release;
 		};
+		85DB5976241F91D200524FE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Content Blocker/Content_Blocker.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4BJWF2898T;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "Content Blocker/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vitanov.Clean-Links.Content-Blocker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		85DB5977241F91D200524FE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Content Blocker/Content_Blocker.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4BJWF2898T;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "Content Blocker/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vitanov.Clean-Links.Content-Blocker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -786,6 +911,15 @@
 			buildConfigurations = (
 				85BD8154241B35F00009A377 /* Debug */,
 				85BD8155241B35F00009A377 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85DB5978241F91D200524FE9 /* Build configuration list for PBXNativeTarget "Content Blocker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85DB5976241F91D200524FE9 /* Debug */,
+				85DB5977241F91D200524FE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
