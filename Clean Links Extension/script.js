@@ -12,7 +12,7 @@
         
         if (e) {
             var holdingModifier = e.ctrlKey || e.metaKey;
-            var middleClick = e.which == 2 || e.button == 4;
+            var middleClick = e.which == 2 || e.button == 1;
  
             var shouldOpenNewTab = holdingModifier || middleClick;
             safari.extension.dispatchMessage("keypress",  { "new-tab": shouldOpenNewTab });
