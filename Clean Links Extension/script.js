@@ -12,7 +12,10 @@
         
         if (e) {
             var holdingModifier = e.ctrlKey || e.metaKey;
-            safari.extension.dispatchMessage("keypress",  { "new-tab": holdingModifier });
+            var middleClick = e.which == 2 || e.button == 4;
+ 
+            var shouldOpenNewTab = holdingModifier || middleClick;
+            safari.extension.dispatchMessage("keypress",  { "new-tab": shouldOpenNewTab });
         }
     };
 
