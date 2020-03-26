@@ -20,6 +20,8 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         "utm_campaign",
         "utm_term",
         "utm_content",
+        "utm_emailname",
+        "utm_funnel",
         "gclid",
         "gclsrc",
         "dclid",
