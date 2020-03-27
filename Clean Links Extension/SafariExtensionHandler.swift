@@ -117,7 +117,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         if let queryItems = components.queryItems {
             // Filter out the blacklisted params
             components.queryItems = queryItems.filter({
-                let isBlacklisted = blacklist.contains($0.name);
+                let isBlacklisted = blacklist.contains($0.name) || $0.name.starts(with: "utm_");
                 
                 if (isBlacklisted) {
                     SafariExtensionHandler.events.insert(Event(type: EventType.parameter, domain: components.host!, value: $0.name
@@ -137,7 +137,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
             if (components.queryItems?.count == queryItems.count) {
                 return
             }
-                
+            
             // Do the actual redirect to the clean url
             if let redirect = components.url {
                 page.getContainingTab(completionHandler: {
