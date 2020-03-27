@@ -45,7 +45,7 @@ Tracking tokens from the following services are stripped:
 
 # Roadmap
 
-- [ ] Possibly publish the extension to the Mac App Store, in order to provide auto updates.tracking links and redirect to the actual link instead.
+- [ ] Possibly publish the extension to the Mac App Store, in order to provide auto updates
 - [ ] Make the main app screen more user friendly
 
 ## Support
