@@ -44,7 +44,7 @@
 			<key>Image</key>
 			<string>fingerprint.png</string>
 			<key>Label</key>
-			<string>Your Button</string>
+			<string>Cleaned Links</string>
 		</dict>
 		<key>SFSafariWebsiteAccess</key>
 		<dict>
