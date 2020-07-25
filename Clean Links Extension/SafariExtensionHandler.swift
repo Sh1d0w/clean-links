@@ -24,7 +24,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         "gclsrc",
         "dclid",
         "zanpid",
-        "mscklid",
+        "msclkid",
         "mc_eid",
         "_openstat",
         "_hsmi",

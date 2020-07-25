@@ -35,7 +35,7 @@ Tracking tokens from the following services are stripped:
 - [DoubleClick Click Identifier](https://en.wikipedia.org/wiki/DoubleClick_Click_Identifier) (dclid), used by DoubleClick, now Google
 - [Facebook Click Identifier](https://en.wikipedia.org/wiki/Facebook_Click_Identifier) (fbclid) used by Facebook in social media analytics
 - [Google Click Identifier](https://en.wikipedia.org/wiki/Google_Click_Identifier) (gclid and gclsrc), used by Google Ads
-- [Microsoft Click Identifier](https://en.wikipedia.org/wiki/Microsoft_Click_Identifier) (mscklid), used by Bing Ads
+- [Microsoft Click Identifier](https://en.wikipedia.org/wiki/Microsoft_Click_Identifier) (msclkid), used by Bing Ads
 - [Zanox click identifier](https://en.wikipedia.org/wiki/Zanox_click_identifier) (zanpid), used by Awin
 - Mailchimp (mc_eid)
 - Yandex (_openstat)
