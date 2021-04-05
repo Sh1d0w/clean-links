@@ -21,7 +21,7 @@ Table of contents
 
 ### Click tracking
 
-When you click on an external link while browsing `facebook.com` (let's say some articale linked from a post), several things happen.
+When you click on an external link while browsing `facebook.com` (let's say some article linked from a post), several things happen.
 
 - **Facebook** adds `fbclid` query parameter to the url you are about to visit. This allows FB to track that you have clicked the link and allows them to further track your activity when you land on that external page.
 - **Facebook** also does an AJAX request to `https://www.facebook.com/si/linkclick/ajax_callback/` with a lot of personal data and again tracks your click, browser etc.
