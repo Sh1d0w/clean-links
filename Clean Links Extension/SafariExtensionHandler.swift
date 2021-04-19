@@ -29,8 +29,8 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         "_openstat",
         "_hsmi",
         "_hsenc",
-        "spm" // alibaba group, taobao.com, aliyun.com etc...
-        "spm_id_from", // bilibili.com
+        "spm", // alibaba group, taobao.com, aliyun.com etc...
+        "spm_id_from" // bilibili.com
 
     ]
     
