@@ -29,9 +29,14 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         "_openstat",
         "_hsmi",
         "_hsenc",
-        "spm", // alibaba group, taobao.com, aliyun.com etc...
-        "spm_id_from" // bilibili.com
-
+        "spm",          // alibaba group, taobao.com, aliyun.com etc...
+        "spm_id_from",  // bilibili.com
+        "pf_rd_r",      // Amazon Associates
+        "pf_rd_m",      // Amazon Associates
+        "pf_rd_i",      // Amazon Associates
+        "pf_rd_s",      // Amazon Associates
+        "pf_rd_t",      // Amazon Associates
+        "pf_rd_p"       // Amazon Associates
     ]
     
     /**
