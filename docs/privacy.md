@@ -25,12 +25,12 @@ When you click on an external link while browsing `facebook.com` (let's say some
 
 - **Facebook** adds `fbclid` query parameter to the url you are about to visit. This allows FB to track that you have clicked the link and allows them to further track your activity when you land on that external page.
 - **Facebook** also does an AJAX request to `https://www.facebook.com/si/linkclick/ajax_callback/` with a lot of personal data and again tracks your click, browser etc.
-- **Facebook** replaces the original articale link with `l.facebook.com/l.php?u=http://the-real-url.com` just in case you have javascript enabled or you try to copy the link to the article to a friend. This again tracks your click.
+- **Facebook** replaces the original article link with `l.facebook.com/l.php?u=http://the-real-url.com` just in case you have javascript enabled or you try to copy the link to the article to a friend. This again tracks your click.
 
 
 ### Presence tracking
 
-Periodicly **Facebook** pings `https://www.facebook.com/ajax/bz` with a lot of personal data as well, indicating what you are looking to, time spent etc.
+Periodically **Facebook** pings `https://www.facebook.com/ajax/bz` with a lot of personal data as well, indicating what you are looking to, time spent etc.
 
 ### What *Clean Links* do to prevent all this?
 
@@ -43,8 +43,8 @@ Periodicly **Facebook** pings `https://www.facebook.com/ajax/bz` with a lot of p
 
 ### Click tracking
 
-- When you search for something on **Google** and you click on a search result, **Google** silently swapts the real url with `https://google.com/url?u=https://you-real-url&more-tracking-params` and tracks your click.
+- When you search for something on **Google** and you click on a search result, **Google** silently swaps the real url with `https://google.com/url?u=https://you-real-url&more-tracking-params` and tracks your click.
 
 ### What *Clean Links* do to prevent all this?
 
-- **Clean Links** prevents opening links like `https://google.com/url?u=...` and instead opens the real link you've intended yo open, without letting google track you.
+- **Clean Links** prevents opening links like `https://google.com/url?u=...` and instead opens the real link you've intended to open, without letting google track you.
