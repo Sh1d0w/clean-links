@@ -78,6 +78,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3A15219E2AEAE5FE00C735B1 /* Content Blocker.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Content Blocker.xctestplan"; sourceTree = "<group>"; };
 		850AB756241E7F4A00D3CA35 /* ExternalLinkGuard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalLinkGuard.swift; sourceTree = "<group>"; };
 		8593F5A2241CA60A00DF5915 /* CleanedLinkItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanedLinkItem.swift; sourceTree = "<group>"; };
 		8593F5A3241CA60A00DF5915 /* CleanedLinkItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CleanedLinkItem.xib; sourceTree = "<group>"; };
@@ -155,6 +156,7 @@
 		85BD8100241B35EE0009A377 = {
 			isa = PBXGroup;
 			children = (
+				3A15219E2AEAE5FE00C735B1 /* Content Blocker.xctestplan */,
 				85BD810B241B35EE0009A377 /* Clean Links */,
 				85BD811F241B35F00009A377 /* Clean LinksTests */,
 				85BD812A241B35F00009A377 /* Clean LinksUITests */,

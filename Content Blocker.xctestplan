@@ -1,0 +1,36 @@
+{
+  "configurations" : [
+    {
+      "id" : "094721DA-5946-46CC-8416-63C3B9B2295C",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Clean Links.xcodeproj",
+      "identifier" : "85BD8108241B35EE0009A377",
+      "name" : "Clean Links"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Clean Links.xcodeproj",
+        "identifier" : "85BD811B241B35F00009A377",
+        "name" : "Clean LinksTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Clean Links.xcodeproj",
+        "identifier" : "85BD8126241B35F00009A377",
+        "name" : "Clean LinksUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
