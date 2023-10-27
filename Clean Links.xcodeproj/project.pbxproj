@@ -13,7 +13,6 @@
 		8593F5A5241CA60A00DF5915 /* CleanedLinkItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8593F5A3241CA60A00DF5915 /* CleanedLinkItem.xib */; };
 		8593F5AD241CAE4E00DF5915 /* fingerprint.png in Resources */ = {isa = PBXBuildFile; fileRef = 8593F5AC241CAE4E00DF5915 /* fingerprint.png */; };
 		8593F5B1241CC6AE00DF5915 /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8593F5B0241CC6AE00DF5915 /* DataStructures.swift */; };
-		85BD810D241B35EE0009A377 /* Clean_Links.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 85BD810C241B35EE0009A377 /* Clean_Links.entitlements */; };
 		85BD810F241B35EE0009A377 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BD810E241B35EE0009A377 /* AppDelegate.swift */; };
 		85BD8112241B35EE0009A377 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85BD8110241B35EE0009A377 /* Main.storyboard */; };
 		85BD8114241B35EE0009A377 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BD8113241B35EE0009A377 /* ViewController.swift */; };
@@ -395,7 +394,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85BD810D241B35EE0009A377 /* Clean_Links.entitlements in Resources */,
 				85BD8116241B35F00009A377 /* Assets.xcassets in Resources */,
 				85BD8112241B35EE0009A377 /* Main.storyboard in Resources */,
 			);
@@ -561,6 +559,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 13;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -579,12 +578,14 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -621,6 +622,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 13;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -633,11 +635,13 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -647,7 +651,6 @@
 				CODE_SIGN_ENTITLEMENTS = "Clean Links Extension/Clean_Links_Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 4BJWF2898T;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Clean Links Extension/Info.plist";
@@ -656,12 +659,9 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vitanov.Clean-Links-Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -671,7 +671,6 @@
 				CODE_SIGN_ENTITLEMENTS = "Clean Links Extension/Clean_Links_Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 4BJWF2898T;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Clean Links Extension/Info.plist";
@@ -680,12 +679,9 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vitanov.Clean-Links-Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -698,7 +694,6 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 4BJWF2898T;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Clean Links/Info.plist";
@@ -706,11 +701,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vitanov.Clean-Links";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -723,7 +715,6 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 4BJWF2898T;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Clean Links/Info.plist";
@@ -731,11 +722,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vitanov.Clean-Links";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -753,10 +741,8 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vitanov.Clean-LinksTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Clean Links.app/Contents/MacOS/Clean Links";
 			};
 			name = Debug;
@@ -775,10 +761,8 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vitanov.Clean-LinksTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Clean Links.app/Contents/MacOS/Clean Links";
 			};
 			name = Release;
@@ -798,7 +782,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vitanov.Clean-LinksUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = "Clean Links";
 			};
 			name = Debug;
@@ -818,7 +801,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vitanov.Clean-LinksUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = "Clean Links";
 			};
 			name = Release;
@@ -829,7 +811,6 @@
 				CODE_SIGN_ENTITLEMENTS = "Content Blocker/Content_Blocker.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 4BJWF2898T;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Content Blocker/Info.plist";
@@ -838,11 +819,9 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vitanov.Clean-Links.Content-Blocker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -852,7 +831,6 @@
 				CODE_SIGN_ENTITLEMENTS = "Content Blocker/Content_Blocker.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 4BJWF2898T;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Content Blocker/Info.plist";
@@ -861,11 +839,9 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vitanov.Clean-Links.Content-Blocker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
